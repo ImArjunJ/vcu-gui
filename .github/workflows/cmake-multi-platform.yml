@@ -58,7 +58,7 @@ jobs:
             libx11-dev \
             libxrandr-dev \
             xserver-xorg-dev \
-            xorg-dev
+            xorg-dev \
             libxcursor-dev \
             xorg
 
