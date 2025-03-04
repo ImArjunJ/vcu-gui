@@ -60,6 +60,7 @@ jobs:
             xserver-xorg-dev \
             xorg-dev \
             libxcursor-dev \
+            libasound2-dev \
             xorg
 
       # Windows-specific build configuration
