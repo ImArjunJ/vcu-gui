@@ -67,7 +67,6 @@ void Application::anotherInstanceStarted(const juce::String& /*commandLine*/)
 void Application::handleCommandLine(
     const juce::StringArray& commandLineArguments)
 {
-
 #if UNIT_TEST
     juce::ArgumentList args(ProjectInfo::projectName, commandLineArguments);
 
@@ -95,6 +94,26 @@ void Application::handleCommandLine(
 #else
     ignoreUnused(commandLineArguments);
 #endif
+
+    if (args.containsOption("--help|-h"))
+    {
+        juce::String helpMessage
+            = "Usage: " + getApplicationName()
+              + " [options]\n\n"
+                "Options:\n"
+                "  --help, -h\t\tShow this help message\n"
+                "  --file, -f [path]\tLoad config file from file path\n";
+        std::cout << helpMessage;
+        quit();
+    }
+    else if (args.containsOption("--file|-f"))
+    {
+        auto value = args.getValueForOption("--file|-f");
+        if (value.length() != 0)
+        {
+            configData.loadFromFile(juce::File(value));
+        }
+    }
 }
 
 //==============================================================================
