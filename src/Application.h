@@ -6,12 +6,13 @@
 
 #pragma once
 
+#include <JuceHeader.h>
+#include <limits.h>
+
 #include "CommandManager.h"
 #include "config/DataModel.h"
 #include "gui/appearance/LookAndFeel.h"
 #include "gui/windows/MainWindow.h"
-#include <JuceHeader.h>
-#include <limits.h>
 
 /**
  * @brief Main JUCE application
@@ -19,7 +20,6 @@
 class Application : public juce::JUCEApplication
 {
 public:
-
     //==========================================================================
     Application() = default;
 
@@ -39,7 +39,6 @@ public:
     juce::ApplicationCommandTarget* getNextCommandTarget() override;
 
 private:
-
     //==========================================================================
     sufst::LookAndFeel lookAndFeel;
 
