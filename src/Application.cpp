@@ -67,9 +67,8 @@ void Application::anotherInstanceStarted(const juce::String& /*commandLine*/)
 void Application::handleCommandLine(
     const juce::StringArray& commandLineArguments)
 {
-#if UNIT_TEST
     juce::ArgumentList args(ProjectInfo::projectName, commandLineArguments);
-
+#if UNIT_TEST
     // quick way to run unit tests
     juce::String testOption = "--test|-t";
 
